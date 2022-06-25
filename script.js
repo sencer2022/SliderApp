@@ -29,6 +29,8 @@ var models = [
 
 var index = 2;
 var slideCount = models.length;
+var interval;
+
 var settings = {
     duration: '1000', //2000 ms
     random: false
@@ -62,11 +64,24 @@ document.querySelector('.fa-caret-right').addEventListener('click',function(){
 });
 
 
+document.querySelectorAll('.arrow').forEach(function(item){
+    item.addEventListener('mouseenter', function(){
+        clearInterval(interval);
+    })
+})
+
+document.querySelectorAll('.arrow').forEach(function(item){
+    item.addEventListener('mouseleave', function(){
+        init(settings);
+    })
+})
+
+
 
 function init(settings){
 
     var previous;
-    setInterval(() => {
+    interval = setInterval(() => {
         
         if(settings.random){
             do {
