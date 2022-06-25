@@ -32,7 +32,16 @@ var slideCount = models.length;
 var settings = {
     duration: '1000', //2000 ms
     random: false
-}
+};
+
+const switchShuffling = document.querySelector('.form-check-input');
+switchShuffling.addEventListener('change', function(){
+    if(switchShuffling.checked){
+        settings.random = true;
+    }else{
+        settings.random = false;
+    }
+})
 
 init(settings);
 
@@ -69,10 +78,11 @@ function init(settings){
                 index = 0
             }
             showSlide(index);
-            console.log(index);
+            //console.log(index);
             index++;
 
         }
+        console.log(index);
         showSlide(index);
 
     }, settings.duration);
