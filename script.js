@@ -31,7 +31,7 @@ var index = 2;
 var slideCount = models.length;
 var settings = {
     duration: '1000', //2000 ms
-    random: true
+    random: false
 }
 
 init(settings);
@@ -65,10 +65,15 @@ function init(settings){
             }while(index == previous)
             previous = index;
         }else{
+            if(index==slideCount){
+                index = 0
+            }
+            showSlide(index);
+            console.log(index);
+            index++;
 
         }
         showSlide(index);
-        console.log(index);
 
     }, settings.duration);
 }
