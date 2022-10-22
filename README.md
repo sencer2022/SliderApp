@@ -1,6 +1,6 @@
 # Slider Example
 
-Javascript basics and DOM manipulation has been studied in this snippet.
+Javascript basics and DOM manipulation have been studied in this snippet.
 
 Bootstrap has been used.
 
